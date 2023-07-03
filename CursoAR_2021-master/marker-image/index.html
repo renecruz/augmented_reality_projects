@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <script src="./lib/aframe-master.min.js"></script>
+  <!-- we import arjs version without NFT but with marker + location based support -->
+  <script src="./lib/aframe-ar.js"></script>
+  <body style="margin: 0px; overflow: hidden;">
+    <a-scene
+      embedded
+      vr-mode-ui="enabled: false"
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+    >
+      <a-assets>
+        <img
+          id="my-image"
+          src="https://renecruz.github.io/CursoAR_2021/marker-image/image/aguachile.jpg"          
+        />
+      </a-assets>
+      <a-image width="1" height="1" src="#my-image" rotation="0 0 90" position="0 0 0"></a-image>
+      <!-- <a-marker-camera preset='hiro'></a-marker-camera> -->
+      <a-marker-camera
+        preset="custom"
+        type="pattern"
+        url="./marker/remitee.patt"
+      ></a-marker-camera>
+    </a-scene>
+  </body>
+</html>

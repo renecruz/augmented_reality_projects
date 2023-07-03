@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="./lib/aframe-master.min.js"></script>
+  <!-- we import arjs version without NFT but with marker + location based support -->
+  <script src="./lib/aframe-ar.js"></script>
+  <script>
+    AFRAME.registerComponent('audiohandler', {
+       init:function() {
+       let playing = false;
+       let audio = this.el.components.sound;
+      this.el.setAttribute("src", "https://renecruz.github.io/CursoAR_2021/marker-audio/audio/file.mp3");
+
+       this.el.addEventListener('click', () => {
+
+       if(!playing) {
+          audio.playSound();
+       } else {
+          audio.stopSound();
+
+       }
+       playing = !playing;
+       });
+       }
+       })</script>
+  </head>
+  <body style="margin: 0px; overflow: hidden;">
+    <a-scene
+      embedded
+      vr-mode-ui="enabled: false"
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+      cursor="rayOrigin:mouse"
+    >
+      <a-entity 
+        geometry="primitive: box" material="src: ./image/aguachile.jpg"
+        autoplay="false"
+        audiohandler>
+      </a-entity>
+
+      <a-marker-camera
+        preset="custom"
+        type="pattern"
+        url="./marker/remitee.patt"
+      ></a-marker-camera>
+    </a-scene>
+  </body>
+</html>

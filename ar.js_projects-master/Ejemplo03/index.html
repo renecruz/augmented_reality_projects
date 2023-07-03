@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+<!-- include aframe -->
+<!-- <script src="lib/aframe.js"></script> -->
+<!-- include aframe-ar.js -->
+<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+<script src="lib/aframe-ar.js"></script>
+   
+
+</head>
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+
+	<!-- <a-scene embedded arjs='sourceType: webcam; detectionMode: mono; maxDetectionRate: 30; canvasWidth: 440; canvasHeight: 180'>		
+			<a-entity gltf-model="drone/scene.gltf" scale="0.005 0.005 0.005" position="0 0 0" rotation="0 0 0"></a-entity>		
+		<a-marker-camera preset='hiro'></a-marker-camera>
+	</a-scene> -->
+	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono; maxDetectionRate: 30; canvasWidth: 440; canvasHeight: 180'>
+		<!-- define the object which gonna be put on this marker  -->
+		<!-- <a-box position='0 0 0' material='opacity: 0.5; side: double'> -->
+			<a-entity gltf-model="drone/scene.gltf" scale="0.005 0.005 0.005" position="0 0 0.5" rotation="270 0 0"></a-entity>
+
+		<!-- </a-box> -->
+		<a-marker-camera preset='kanji'></a-marker-camera>
+	</a-scene>
+</body>
+</html>
